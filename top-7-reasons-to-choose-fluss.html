@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html class="has-navbar-fixed-top">
+<head>
+    <meta charset="utf-8">
+<title>使用Fluss的7大理由 - 是时候一统流湖仓了 - Liebing&#39;s Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="baidu-site-verification" content="codeva-2Q9E1leVAG" />
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css">
+
+
+
+
+<meta name="description" content="">
+
+
+
+<meta name="keywords" content="code">
+
+
+
+    <meta name="description" content="&amp;#x672C;&amp;#x6587;&amp;#x5DF2;&amp;#x6536;&amp;#x5F55;&amp;#x5728;&amp;#x5408;&amp;#x96C6;Apche Fluss&amp;#x539F;&amp;#x7406;&amp;#x4E0E;&amp;#x5B9E;&amp;#x8DF5;&amp;#x4E2D;.   Apache Fluss(Incubating)&amp;#x662F;&amp;#x4E00;&amp;#x6B3E;&amp;#x65B0;&amp;#x578B;&amp;#x7684;&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Fluss的7大理由 - 是时候一统流湖仓了">
+<meta property="og:url" content="http://yoursite.com/top-7-reasons-to-choose-fluss.html">
+<meta property="og:site_name" content="Liebing&#39;s Blog">
+<meta property="og:description" content="&amp;#x672C;&amp;#x6587;&amp;#x5DF2;&amp;#x6536;&amp;#x5F55;&amp;#x5728;&amp;#x5408;&amp;#x96C6;Apche Fluss&amp;#x539F;&amp;#x7406;&amp;#x4E0E;&amp;#x5B9E;&amp;#x8DF5;&amp;#x4E2D;.   Apache Fluss(Incubating)&amp;#x662F;&amp;#x4E00;&amp;#x6B3E;&amp;#x65B0;&amp;#x578B;&amp;#x7684;&amp;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/top-7-reasons-to-choose-fluss/lakestream-architecture.png">
+<meta property="og:image" content="http://yoursite.com/top-7-reasons-to-choose-fluss/flink-native.png">
+<meta property="og:image" content="http://yoursite.com/top-7-reasons-to-choose-fluss/kappa.png">
+<meta property="og:image" content="http://yoursite.com/top-7-reasons-to-choose-fluss/batch.png">
+<meta property="article:published_time" content="2025-10-25T04:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-25T04:34:49.616Z">
+<meta property="article:author" content="Liebing">
+<meta property="article:tag" content="Apache Fluss">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/top-7-reasons-to-choose-fluss/lakestream-architecture.png">
+
+
+
+
+
+<link rel="icon" href="/img/favicon.ico">
+
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ovo|Source+Code+Pro">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/css/justifiedGallery.min.css">
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+<script defer src="//use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+    
+<nav class="navbar is-transparent is-fixed-top navbar-main" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item navbar-logo" href="/">
+                
+                <img src="/images/logo.png" alt="" height="28">
+                
+            </a>
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="navbar-menu navbar-start">
+            
+            <a class="navbar-item "
+               href="/collections">合集</a>
+            
+            <a class="navbar-item "
+               href="/archive">归档</a>
+            
+            <a class="navbar-item "
+               href="/categories">分类</a>
+            
+            <a class="navbar-item "
+               href="/tags">标签</a>
+            
+            <a class="navbar-item "
+               href="/friends">友链</a>
+            
+            <a class="navbar-item "
+               href="/about">关于</a>
+            
+        </div>
+        
+        <div class="navbar-menu navbar-end">
+            
+            <a class="navbar-item search" title="Search" href="javascript:;">
+                <i class="fas fa-search"></i>
+            </a>
+            
+            
+            <div class="navbar-item is-hoverable has-dropdown is-hidden-mobile is-hidden-tablet-only toc">
+                <a class="navbar-item" title="Table of Contents">
+                    <i class="fa fa-list"></i>
+                </a>
+                <div class="navbar-dropdown is-right">
+                    
+                    
+                    
+                    
+                    <a class="navbar-item" href="#Lake-Native">1&nbsp;&nbsp;<b>Lake Native</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Flink-Native">2&nbsp;&nbsp;<b>Flink Native</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Kappa架构实现">3&nbsp;&nbsp;<b>Kappa架构实现</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#列裁剪及过滤下推">4&nbsp;&nbsp;<b>列裁剪及过滤下推</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#数据更新与探查">5&nbsp;&nbsp;<b>数据更新与探查</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#多模态数据支持">6&nbsp;&nbsp;<b>多模态数据支持</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#Auto-Rebalance">7&nbsp;&nbsp;<b>Auto Rebalance</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#总结">8&nbsp;&nbsp;<b>总结</b></a>
+                    
+                    
+                    <hr class="navbar-divider">
+                    
+                    
+                    <a class="navbar-item" href="#参考">9&nbsp;&nbsp;<b>参考</b></a>
+                    
+                </div>
+            </div>
+            
+            
+            <a class="navbar-item" title="GitHub" href="https://github.com/LB-Yu" target="_blank" rel="noopener">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+               
+            <a class="navbar-item" title="知" href="https://www.zhihu.com/people/liebingyu" target="_blank" rel="noopener">
+                
+                知
+                
+            </a>
+               
+            
+        </div>
+    </div>
+</nav>
+
+    <section class="section">
+    <div class="container">
+    <article class="article content gallery" itemscope itemprop="blogPost">
+    <h1 class="article-title is-size-3 is-size-4-mobile" itemprop="name">
+        
+            使用Fluss的7大理由 - 是时候一统流湖仓了
+        
+    </h1>
+    <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
+        <span class="column is-narrow">
+            <time datetime="2025-10-25T04:00:00.000Z" itemprop="datePublished">Oct 25 2025</time>
+        </span>
+        
+        <span class="column is-narrow article-category">
+            <i class="far fa-folder"></i>
+            <a class="article-category-link" href="/categories/Streaming-Systems/">Streaming Systems</a>
+        </span>
+        
+        
+        <span class="column is-narrow">
+            
+            
+            23 minutes read (About 3400 words)
+        </span>
+        
+        
+        <span id="/top-7-reasons-to-choose-fluss.html" class="column is-narrow leancloud_visitors" data-flag-title="使用Fluss的7大理由 - 是时候一统流湖仓了">
+            VISITED
+                <i class="leancloud-visitors-count">
+                    <i class="fa fa-spinner fa-spin"></i>
+                </i>
+            TIMES
+        </span>
+        
+    </div>
+    <div class="article-entry is-size-6-mobile" itemprop="articleBody">
+    
+        <html><head></head><body><blockquote class="colorquote info"><p>&#x672C;&#x6587;&#x5DF2;&#x6536;&#x5F55;&#x5728;&#x5408;&#x96C6;<a href="/collections/fluss/">Apche Fluss&#x539F;&#x7406;&#x4E0E;&#x5B9E;&#x8DF5;</a>&#x4E2D;.</p>
+</blockquote>
+
+<p>Apache Fluss(Incubating)&#x662F;&#x4E00;&#x6B3E;&#x65B0;&#x578B;&#x7684;&#x6D41;&#x5F0F;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;, &#x540C;&#x65F6;&#x517C;&#x987E;&#x6D41;&#x5F0F;&#x8BFB;&#x5199;&#x548C;&#x5B9E;&#x65F6;&#x5206;&#x6790;. &#x5B83;&#x6DF1;&#x5EA6;&#x96C6;&#x6210;&#x6570;&#x636E;&#x6E56;&#x67B6;&#x6784;, &#x5F25;&#x5408;&#x4E86;&#x6D41;&#x6570;&#x636E;&#x4E0E;&#x6570;&#x636E;&#x6E56;&#x4E4B;&#x95F4;&#x7684;&#x9E3F;&#x6C9F;, &#x89E3;&#x51B3;&#x4E86;&#x6570;&#x636E;&#x6E56;&#x7684;&#x201D;&#x6700;&#x540E;&#x4E00;&#x5206;&#x949F;&#x201D;&#x5EF6;&#x8FDF;&#x95EE;&#x9898;. &#x672C;&#x6587;&#x603B;&#x7ED3;&#x4E86;&#x4F7F;&#x7528;Fluss&#x7684;7&#x5927;&#x7406;&#x7531;, &#x5305;&#x62EC;&#x5176;&#x5728;&#x6570;&#x636E;&#x80FD;&#x529B;&#x53CA;&#x8FD0;&#x7EF4;&#x7BA1;&#x7406;&#x65B9;&#x9762;&#x7684;&#x5148;&#x8FDB;&#x6027;.</p>
+<a id="more"></a>
+
+<h1 id="Lake-Native"><a href="#Lake-Native" class="headerlink" title="Lake Native"></a>Lake Native</h1><p>&#x4E0E;&#x6570;&#x636E;&#x6E56;&#x7684;&#x7D27;&#x5BC6;&#x7ED3;&#x5408;, &#x662F;Fluss&#x6700;&#x91CD;&#x8981;&#x7684;&#x5356;&#x70B9;&#x4E4B;&#x4E00;. &#x6E56;&#x4ED3;&#x4E00;&#x4F53;(Lakehouse)&#x67B6;&#x6784;&#x6B63;&#x5728;&#x6210;&#x4E3A;&#x4E3B;&#x6D41;, &#x4F46;&#x662F;&#x76F8;&#x6BD4;&#x4E8E;&#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;, &#x76EE;&#x524D;&#x6E56;&#x4ED3;&#x4E00;&#x4F53;&#x67B6;&#x6784;&#x7684;&#x4F7F;&#x7528;&#x95E8;&#x69DB;&#x4ECD;&#x504F;&#x9AD8;. &#x7528;&#x6237;&#x9700;&#x8981;&#x81EA;&#x884C;&#x9009;&#x53D6;&#x6570;&#x636E;&#x683C;&#x5F0F;, &#x4ED4;&#x7EC6;&#x4F18;&#x5316;&#x6570;&#x636E;&#x8BFB;&#x5199;, &#x7BA1;&#x7406;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x6587;&#x4EF6;. &#x4E0D;&#x8FC7;&#x6E56;&#x4ED3;&#x4E00;&#x4F53;&#x7684;&#x4EF7;&#x503C;&#x4E3B;&#x5F20;&#x662F;&#x660E;&#x786E;&#x7684;, &#x672A;&#x6765;&#x51E0;&#x5E74;&#x5185;&#x8981;&#x89E3;&#x51B3;&#x7684;&#x662F;&#x7B80;&#x5316;&#x7AEF;&#x5230;&#x7AEF;&#x67B6;&#x6784;. &#x5C3D;&#x7BA1;&#x4E3B;&#x6D41;&#x7684;&#x8BA1;&#x7B97;&#x5F15;&#x64CE;&#x6B63;&#x5728;&#x79EF;&#x6781;&#x9002;&#x914D;&#x6570;&#x636E;&#x6E56;&#x7684;&#x8BFB;&#x5199;, &#x5C3D;&#x6700;&#x5927;&#x53EF;&#x80FD;&#x5B9E;&#x73B0;&#x5F00;&#x7BB1;&#x5373;&#x7528;. &#x4F46;&#x662F;&#x7531;&#x4E8E;&#x7F3A;&#x4E4F;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x914D;&#x5408;, &#x5927;&#x91CF;&#x7279;&#x6027;&#x5806;&#x79EF;&#x5728;&#x8BA1;&#x7B97;&#x5F15;&#x64CE;&#x4FA7;, &#x8FD8;&#x662F;&#x4E0D;&#x53EF;&#x907F;&#x514D;&#x5730;&#x7ED9;&#x7528;&#x6237;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x590D;&#x6742;&#x5EA6;. &#x6B64;&#x5916;, &#x6570;&#x636E;&#x6E56;&#x7684;&#x5206;&#x949F;&#x7EA7;&#x5EF6;&#x8FDF;, &#x5BFC;&#x81F4;&#x901A;&#x8FC7;&#x7EA7;&#x8054;&#x4F5C;&#x4E1A;&#x6784;&#x5EFA;&#x7684;&#x5206;&#x5C42;&#x6570;&#x4ED3;&#x7684;&#x6570;&#x636E;&#x65B0;&#x9C9C;&#x5EA6;&#x9010;&#x5C42;&#x52A3;&#x5316;.</p>
+<p>Fluss&#x662F;&#x79D2;&#x7EA7;&#x5B9E;&#x65F6;&#x7684;&#x6D41;&#x5B58;&#x50A8;, &#x5929;&#x7136;&#x6709;&#x5B8C;&#x6574;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x652F;&#x6301;, &#x53EF;&#x63D0;&#x4F9B;&#x7C7B;&#x4F3C;&#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;&#x7684;&#x6613;&#x7528;&#x8BFB;&#x5199;, &#x7EA7;&#x8054;&#x4F5C;&#x4E1A;&#x4E5F;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x5EF6;&#x8FDF;&#x589E;&#x52A0;. &#x56E0;&#x6B64;&#x6709;&#x671B;&#x6210;&#x4E3A;&#x7B80;&#x5316;&#x6E56;&#x4ED3;&#x4E00;&#x4F53;&#x67B6;&#x6784;&#x7684;&#x5173;&#x952E;&#x4E00;&#x73AF;, &#x4F5C;&#x4E3A;&#x6E56;&#x4ED3;&#x4E00;&#x4F53;&#x67B6;&#x6784;&#x7684;&#x5BF9;&#x5916;&#x670D;&#x52A1;&#x754C;&#x9762;, &#x7B80;&#x5316;&#x6570;&#x636E;&#x5165;&#x6E56;. &#x8FDB;&#x800C;&#x4F7F;&#x5F97;&#x6E56;&#x4ED3;&#x4E00;&#x4F53;&#x67B6;&#x6784;&#x53EF;&#x4EE5;&#x50CF;&#x6570;&#x636E;&#x4ED3;&#x5E93;&#x670D;&#x52A1;&#x90A3;&#x6837;&#x6613;&#x7528;. Fluss&#x4E0E;&#x6570;&#x636E;&#x6E56;&#x662F;&#x4E92;&#x4E3A;&#x8865;&#x5145;&#x7684;: &#x4E00;&#x65B9;&#x9762;Fluss&#x53EF;&#x7ED3;&#x5408;&#x6570;&#x636E;&#x6E56;&#x5B9E;&#x73B0;&#x6D41;&#x6279;&#x4E00;&#x4F53;&#x7684;&#x5B58;&#x50A8;, Fluss&#x7684;<a href="https://fluss.apache.org/docs/maintenance/tiered-storage/lakehouse-storage/" target="_blank" rel="noopener">Tiering Service</a>&#x53EF;&#x4EE5;&#x5C06;&#x5386;&#x53F2;&#x6570;&#x636E;&#x540C;&#x6B65;&#x5230;&#x6570;&#x636E;&#x6E56;, &#x8FD9;&#x6837;&#x5927;&#x89C4;&#x6A21;&#x6570;&#x636E;&#x7684;&#x5206;&#x6790;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;&#x6E56;&#x4E0A;&#x8FDB;&#x884C;. &#x52A0;&#x4E0A;Union Read&#x7684;&#x652F;&#x6301;, &#x7528;&#x6237;&#x53EA;&#x9700;&#x5173;&#x5FC3;&#x5982;&#x4F55;&#x4ECE;Fluss&#x8BFB;&#x5199;&#x548C;&#x67E5;&#x8BE2;&#x6570;&#x636E;, &#x6570;&#x636E;&#x7684;&#x7BA1;&#x7406;&#x548C;&#x8DEF;&#x7531;&#x5C06;&#x7531;Fluss&#x7EDF;&#x4E00;&#x8FDB;&#x884C;. &#x53E6;&#x4E00;&#x65B9;&#x9762;, &#x6570;&#x636E;&#x6E56;&#x53EF;&#x501F;&#x52A9;Fluss&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x80FD;&#x529B;, &#x7B80;&#x5316;&#x6570;&#x636E;&#x5165;&#x6E56;. &#x66F4;&#x8FDB;&#x4E00;&#x6B65;&#x5730;, Fluss&#x53EF;&#x63D0;&#x4F9B;&#x65E0;&#x72B6;&#x6001;&#x7684;REST API, &#x6765;&#x5B9E;&#x73B0;&#x6700;&#x5177;&#x5F39;&#x6027;&#x548C;&#x6613;&#x7528;&#x7684;&#x670D;&#x52A1;.</p>
+<p align="center">
+    <img src="./top-7-reasons-to-choose-fluss/lakestream-architecture.png" width="100%">
+</p>
+
+<blockquote>
+<p>&#x76EE;&#x524D;&#x5546;&#x4E1A;&#x5316;&#x7684;&#x6D41;&#x5B58;&#x50A8;&#x670D;&#x52A1;&#x5982;<a href="https://docs.confluent.io/platform/current/kafka-rest/index.html" target="_blank" rel="noopener">Confluent</a>&#x548C;<a href="https://docs.redpanda.com/redpanda-cloud/develop/http-proxy/" target="_blank" rel="noopener">Redpand</a>&#x90FD;&#x63D0;&#x4F9B;&#x4E86;REST API. Fluss&#x793E;&#x533A;&#x5BF9;REST API&#x5DF2;&#x6709;&#x521D;&#x6B65;&#x7684;&#x8BA8;&#x8BBA;, &#x76F8;&#x4FE1;&#x5728;&#x4E0D;&#x4E45;&#x4E4B;&#x540E;&#x5C31;&#x4F1A;&#x652F;&#x6301;. &#x76EE;&#x524D;&#x4ECD;&#x6709;&#x5F85;&#x5546;&#x69B7;&#x7684;&#x662F;&#x5927;&#x4E8C;&#x8FDB;&#x5236;&#x5BF9;&#x8C61;&#x7684;&#x63A5;&#x5165;, &#x5C06;&#x5927;&#x4E8C;&#x8FDB;&#x5236;&#x5BF9;&#x8C61;&#x63A5;&#x5165;&#x6D41;&#x5B58;&#x50A8;&#x4F3C;&#x4E4E;&#x4E0D;&#x592A;&#x5FC5;&#x8981;, &#x4EE5;&#x7B14;&#x8005;&#x4E0D;&#x6210;&#x719F;&#x7684;&#x60F3;&#x6CD5;&#x6765;&#x770B;&#x6216;&#x8BB8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;REST API&#x76F4;&#x63A5;&#x63A5;&#x5165;Remote Storage&#x6216;&#x6570;&#x636E;&#x6E56;.</p>
+</blockquote>
+<h1 id="Flink-Native"><a href="#Flink-Native" class="headerlink" title="Flink Native"></a>Flink Native</h1><p>&#x5728;&#x5F53;&#x524D;&#x7684;&#x6D41;&#x5904;&#x7406;&#x7814;&#x53D1;&#x4E2D;&#xFF0C;Flink&#x5DF2;&#x6210;&#x4E3A;&#x8BA1;&#x7B97;&#x6846;&#x67B6;&#x7684;&#x4E8B;&#x5B9E;&#x6807;&#x51C6;, &#x4F46;&#x5B58;&#x50A8;&#x5C42;&#x4ECD;&#x9700;&#x590D;&#x6742;&#x7684;&#x9009;&#x578B;&#x4E0E;&#x6743;&#x8861;. &#x672C;&#x8D28;&#x4E0A;&#x662F;&#x56E0;&#x4E3A;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x6D41;&#x5904;&#x7406;&#x94FE;&#x8DEF;&#x901A;&#x5E38;&#x9700;&#x8981;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5B58;&#x50A8;&#x652F;&#x6301;:</p>
+<ul>
+<li>&#x6700;&#x57FA;&#x672C;&#x7684;&#x662F;&#x9700;&#x8981;&#x6D41;&#x5B58;&#x50A8;&#x652F;&#x6301;&#x6D41;&#x5F0F;&#x7684;&#x8BFB;&#x5199;, &#x6765;&#x9A71;&#x52A8;&#x6216;&#x7EA7;&#x8054;&#x6D41;&#x5904;&#x7406;&#x94FE;&#x8DEF;;</li>
+<li>&#x5BF9;&#x4E8E;&#x5904;&#x7406;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5BCC;&#x5316;&#x9700;&#x6C42;, &#x9700;&#x8981;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x7EF4;&#x8868;&#x5B58;&#x50A8;. &#x65F6;&#x6548;&#x6027;&#x8981;&#x6C42;&#x4E0D;&#x9AD8;&#x7684;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6570;&#x636E;&#x6E56;&#x652F;&#x6301;, &#x7EAF;&#x5B9E;&#x65F6;&#x7684;&#x9700;&#x8981;&#x652F;&#x6301;&#x5B9E;&#x65F6;&#x70B9;&#x67E5;&#x7684;&#x5B58;&#x50A8;&#x670D;&#x52A1;, &#x5982;Redis, HBase&#x7B49;.</li>
+<li>&#x5BF9;&#x6D41;&#x5904;&#x7406;&#x7ED3;&#x679C;&#x7684;&#x5E94;&#x7528;, &#x901A;&#x5E38;&#x9700;&#x8981;OLAP&#x5B58;&#x50A8;&#x6765;&#x652F;&#x6301;&#x67E5;&#x8BE2;&#x548C;&#x5206;&#x6790;.</li>
+</ul>
+<p>&#x4EE5;&#x524D;&#x7684;&#x95EE;&#x9898;&#x662F;&#x6CA1;&#x6709;&#x540C;&#x65F6;&#x652F;&#x6301;&#x4E09;&#x79CD;&#x80FD;&#x529B;&#x7684;&#x5B58;&#x50A8;, &#x800C;Fluss&#x770B;&#x6765;&#x53EF;&#x4EE5;&#x517C;&#x987E;&#x8FD9;&#x51E0;&#x65B9;&#x9762;&#x7684;&#x80FD;&#x529B;. &#x5BF9;&#x4E8E;Fluss&#x800C;&#x8A00;&#x6D41;&#x5B58;&#x50A8;&#x662F;&#x539F;&#x751F;&#x7684;, &#x70B9;&#x67E5;&#x670D;&#x52A1;&#x901A;&#x8FC7;PrimaryKey&#x8868;&#x652F;&#x6301;&#x4E86;, OLAP&#x65B9;&#x9762;&#x53EF;&#x57FA;&#x4E8E;&#x6570;&#x636E;&#x6E56;&#x5B58;&#x50A8;&#x63D0;&#x4F9B;&#x5927;&#x89C4;&#x6A21;&#x805A;&#x5408;&#x5206;&#x6790;&#x80FD;&#x529B;, &#x4EE5;&#x53CA;Union Read&#x63D0;&#x4F9B;&#x79D2;&#x7EA7;&#x5EF6;&#x8FDF;&#x7684;&#x670D;&#x52A1;.</p>
+<p align="center">
+    <img src="./top-7-reasons-to-choose-fluss/flink-native.png" width="60%">
+</p>
+
+
+<p>&#x6B64;&#x5916;, Fluss&#x4F5C;&#x4E3A;Flink Native&#x7684;&#x6D41;&#x5B58;&#x50A8;, &#x8FD8;&#x80FD;&#x4E0E;Flink SQL&#x8FDB;&#x884C;&#x66F4;&#x52A0;&#x7D27;&#x5BC6;&#x7684;&#x914D;&#x5408;. &#x6709;&#x51E0;&#x4E2A;&#x975E;&#x5E38;&#x5178;&#x578B;&#x7684;&#x6848;&#x4F8B;:</p>
+<ul>
+<li>&#x4E00;&#x662F;&#x4F18;&#x5316;&#x53CC;&#x6D41;Join. &#x7531;&#x4E8E;&#x4F20;&#x7EDF;&#x6D41;&#x5B58;&#x50A8;&#x7F3A;&#x4E4F;&#x67E5;&#x8BE2;&#x80FD;&#x529B;, &#x53CC;&#x6D41;Join&#x901A;&#x5E38;&#x4F9D;&#x8D56;&#x4E8E;Flink&#x7684;&#x72B6;&#x6001;. &#x5B9E;&#x8DF5;&#x4E2D;&#x9887;&#x53D7;&#x8BDF;&#x75C5;&#x7684;&#x662F;Flink&#x5927;&#x72B6;&#x6001;&#x5E26;&#x6765;&#x7684;&#x5DE8;&#x5927;&#x8D44;&#x6E90;&#x5F00;&#x9500;&#x548C;&#x6027;&#x80FD;&#x635F;&#x8017;, &#x5916;&#x52A0;Flink&#x72B6;&#x6001;&#x4E0D;&#x53EF;&#x8BFB;&#x7684;&#x7279;&#x6027;, &#x5236;&#x7EA6;&#x4E86;&#x95EE;&#x9898;&#x6392;&#x67E5;&#x548C;SQL&#x903B;&#x8F91;&#x4FEE;&#x6539;. &#x6709;&#x4E86;Fluss&#x4E4B;&#x540E;, &#x53EF;&#x4EE5;&#x4F9D;&#x8D56;Flink&#x6700;&#x65B0;&#x5F15;&#x5165;&#x7684;<a href="https://cwiki.apache.org/confluence/display/FLINK/FLIP-486%3A+Introduce+A+New+DeltaJoin" target="_blank" rel="noopener">Delta Join</a>&#x53BB;&#x9664;&#x53CC;&#x6D41;Join&#x6240;&#x9700;&#x7684;&#x72B6;&#x6001;. &#x53E6;&#x5916;, &#x901A;&#x8FC7;Fluss&#x7684;<a href="https://fluss.apache.org/docs/table-design/table-types/pk-table/#partial-update" target="_blank" rel="noopener">Partial Update</a>&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5927;&#x5BBD;&#x8868;&#x6A21;&#x5F0F;, &#x5C06;Join&#x4E0B;&#x63A8;&#x5230;&#x5B58;&#x50A8;&#x4FA7;, &#x76F4;&#x63A5;&#x53BB;&#x9664;&#x8BA1;&#x7B97;&#x4FA7;&#x7684;Join&#x7B97;&#x5B50;.</li>
+<li>&#x53E6;&#x4E00;&#x4E2A;&#x662F;&#x53BB;&#x9664;&#x53BB;&#x91CD;&#x7B97;&#x5B50;. &#x6D41;&#x8BA1;&#x7B97;&#x4E2D;, &#x5BF9;&#x4E8E;Append-Only&#x7684;&#x6570;&#x636E;&#x6E90;, &#x5982;&#x679C;&#x4E1A;&#x52A1;&#x4E0A;&#x5B58;&#x5728;&#x6570;&#x636E;&#x53D8;&#x66F4;, &#x5E76;&#x4E14;&#x4E0B;&#x6E38;&#x7B97;&#x5B50;&#x4F9D;&#x8D56;CDC&#x6570;&#x636E;&#x8F93;&#x5165;, &#x90A3;&#x4E48;&#x901A;&#x5E38;&#x9700;&#x8981;&#x5728;Flink&#x4E2D;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x53BB;&#x91CD;&#x7B97;&#x5B50;&#x6765;&#x751F;&#x6210;CDC&#x6570;&#x636E;, &#x8FD9;&#x4E2A;&#x7B97;&#x5B50;&#x9700;&#x8981;&#x4FDD;&#x5B58;&#x6240;&#x6709;&#x7684;&#x4E3B;&#x952E;, &#x4E5F;&#x5B58;&#x5728;&#x72B6;&#x6001;&#x8FC7;&#x5927;&#x95EE;&#x9898;. &#x57FA;&#x4E8E;Fluss Primary Key&#x8868;&#x7684;<a href="https://fluss.apache.org/docs/table-design/table-types/pk-table/#changelog-generation" target="_blank" rel="noopener">CDC&#x751F;&#x6210;</a>&#x80FD;&#x529B;, &#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53BB;&#x9664;Flink&#x4E2D;&#x7684;&#x53BB;&#x91CD;&#x7B97;&#x5B50;.</li>
+</ul>
+<h1 id="Kappa&#x67B6;&#x6784;&#x5B9E;&#x73B0;"><a href="#Kappa&#x67B6;&#x6784;&#x5B9E;&#x73B0;" class="headerlink" title="Kappa&#x67B6;&#x6784;&#x5B9E;&#x73B0;"></a>Kappa&#x67B6;&#x6784;&#x5B9E;&#x73B0;</h1><p>&#x5728;&#x6570;&#x636E;&#x5904;&#x7406;&#x4E0A;, Lambda&#x67B6;&#x6784;&#x4E00;&#x76F4;&#x662F;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528;&#x7684;&#x67B6;&#x6784;, &#x4F46;&#x662F;&#x4ECE;&#x7F8E;&#x5B66;&#x4E0A;&#x6765;&#x8BF4;Kappa&#x67B6;&#x6784;&#x4F3C;&#x4E4E;&#x66F4;&#x52A0;&#x5408;&#x7406;. &#x4EE5;&#x5F80;&#x53D7;&#x9650;&#x4E8E;&#x5B9E;&#x65F6;&#x5C42;&#x7684;&#x6210;&#x672C;, &#x6570;&#x636E;&#x56DE;&#x5237;&#x96BE;&#x5EA6;, &#x5927;&#x89C4;&#x6A21;&#x5206;&#x6790;&#x96BE;&#x5EA6;&#x4EE5;&#x53CA;&#x6301;&#x4E45;&#x5316;&#x80FD;&#x529B;, Kappa&#x67B6;&#x6784;&#x5F88;&#x5C11;&#x6709;&#x843D;&#x5730;&#x7684;&#x573A;&#x666F;. &#x5982;&#x4ECA;, Fluss&#x7684;Lake Native&#x548C;Flink Native&#x7279;&#x6027;&#x4F7F;&#x5F97;Kappa&#x67B6;&#x6784;&#x6210;&#x4E3A;&#x53EF;&#x80FD;. &#x4E00;&#x65B9;&#x9762;, &#x6570;&#x636E;&#x6E56;&#x5B58;&#x50A8;&#x6781;&#x5927;&#x5730;&#x964D;&#x4F4E;&#x4E86;&#x5B9E;&#x65F6;&#x5C42;&#x7684;&#x5B58;&#x50A8;&#x6210;&#x672C;, &#x7B80;&#x5316;&#x4E86;&#x6570;&#x636E;&#x56DE;&#x5237;; &#x53E6;&#x4E00;&#x65B9;&#x9762;, Fluss&#x7EDF;&#x4E00;&#x7BA1;&#x7406;&#x4E86;&#x5B9E;&#x65F6;&#x5C42;&#x548C;&#x6570;&#x636E;&#x6E56;&#x7684;&#x5143;&#x6570;&#x636E;, &#x4F7F;&#x5F97;&#x8BFB;&#x5199;&#x4E00;&#x81F4;&#x6027;&#x4E5F;&#x5F97;&#x5230;&#x4E86;&#x4FDD;&#x8BC1;.</p>
+<p>&#x5173;&#x4E8E;&#x6570;&#x636E;&#x67B6;&#x6784;, &#x6709;&#x8DA3;&#x7684;&#x4E00;&#x70B9;&#x662F;Databricks&#x63D0;&#x51FA;&#x7684;Delta&#x67B6;&#x6784;. &#x5B83;&#x5B9E;&#x9645;&#x4E0A;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x65B0;&#x9C9C;&#x5EA6;&#x4E0E;&#x6210;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x5E73;&#x8861;. &#x8981;&#x5B9E;&#x73B0;Delta&#x67B6;&#x6784;&#x6240;&#x8BF4;&#x7684;&#x589E;&#x91CF;&#x8BA1;&#x7B97;, &#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x524D;&#x63D0;&#x662F;&#x5B58;&#x50A8;&#x5C42;&#x80FD;&#x6355;&#x83B7;&#x6570;&#x636E;&#x53D8;&#x66F4;, &#x76EE;&#x524D;&#x770B;&#x6570;&#x636E;&#x6E56;&#x5B58;&#x50A8;&#x662F;&#x975E;&#x5E38;&#x9002;&#x5408;&#x8FDB;&#x884C;&#x589E;&#x91CF;&#x8BA1;&#x7B97;&#x7684;&#x5B58;&#x50A8;&#x5C42;. &#x5F97;&#x76CA;&#x4E8E;Fluss&#x7684;CDC&#x751F;&#x6210;&#x80FD;&#x529B;, &#x4EE5;&#x53CA;&#x4E0E;&#x6570;&#x636E;&#x6E56;&#x7684;&#x7D27;&#x5BC6;&#x7ED3;&#x5408;. Fluss&#x8868;Tired&#x4EA7;&#x751F;&#x7684;&#x6E56;&#x8868;&#x4E5F;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x589E;&#x91CF;&#x8BA1;&#x7B97;. &#x5173;&#x4E8E;&#x8FD9;&#x65B9;&#x9762;&#x7684;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;, &#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x7B14;&#x8005;&#x4E4B;&#x524D;&#x7684;&#x6587;&#x7AE0;<a href="/flink-mt.html">Flink MT + Paimon - &#x5F00;&#x6E90;&#x4F4E;&#x6210;&#x672C;&#x589E;&#x91CF;&#x8BA1;&#x7B97;&#x7684;&#x66D9;&#x5149;</a>. &#x5F53;&#x7136;, Delta&#x67B6;&#x6784;&#x4E00;&#x822C;&#x662F;&#x4E0D;&#x9700;&#x8981;Fluss&#x7684;&#x79D2;&#x7EA7;&#x5B9E;&#x65F6;&#x6027;&#x7684;, &#x4F46;&#x662F;&#x901A;&#x8FC7;Fluss&#x63A5;&#x5165;&#x7684;&#x6570;&#x636E;, &#x6216;&#x8BB8;&#x80FD;&#x517C;&#x987E;&#x79D2;&#x7EA7;&#x5B9E;&#x65F6;&#x8BA1;&#x7B97;&#x4E0E;&#x589E;&#x91CF;&#x8BA1;&#x7B97;, &#x7ED9;&#x4E1A;&#x52A1;&#x66F4;&#x5927;&#x7684;&#x9009;&#x62E9;&#x7A7A;&#x95F4;.</p>
+<p align="center">
+    <img src="./top-7-reasons-to-choose-fluss/kappa.png" width="60%">
+</p>
+
+<h1 id="&#x5217;&#x88C1;&#x526A;&#x53CA;&#x8FC7;&#x6EE4;&#x4E0B;&#x63A8;"><a href="#&#x5217;&#x88C1;&#x526A;&#x53CA;&#x8FC7;&#x6EE4;&#x4E0B;&#x63A8;" class="headerlink" title="&#x5217;&#x88C1;&#x526A;&#x53CA;&#x8FC7;&#x6EE4;&#x4E0B;&#x63A8;"></a>&#x5217;&#x88C1;&#x526A;&#x53CA;&#x8FC7;&#x6EE4;&#x4E0B;&#x63A8;</h1><p>&#x5728;&#x73B0;&#x4EE3;&#x6570;&#x636E;&#x4ED3;&#x5E93;&#x4E2D;, <strong>&#x5217;&#x88C1;&#x526A;</strong>&#x548C;<strong>&#x8FC7;&#x6EE4;&#x4E0B;&#x63A8;</strong>&#x5DF2;&#x6210;&#x4E3A;&#x6210;&#x719F;&#x4E14;&#x5E7F;&#x6CDB;&#x5E94;&#x7528;&#x7684;&#x4F18;&#x5316;&#x6280;&#x672F;. &#x5B83;&#x4EEC;&#x901A;&#x8FC7;&#x5728;&#x5B58;&#x50A8;&#x5C42;&#x5C3D;&#x65E9;&#x8FC7;&#x6EE4;&#x65E0;&#x5173;&#x6570;&#x636E;, &#x6709;&#x6548;&#x51CF;&#x5C11;&#x4E86;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x91CF;, &#x964D;&#x4F4E;&#x4E86;&#x4E0B;&#x6E38;&#x8BA1;&#x7B97;&#x7684;&#x5904;&#x7406;&#x538B;&#x529B;. &#x7136;&#x800C;, &#x8FD9;&#x7C7B;&#x4F18;&#x5316;&#x80FD;&#x529B;&#x5728;&#x5F53;&#x524D;&#x4E3B;&#x6D41;&#x7684;<strong>&#x6D41;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;</strong>&#x4E2D;&#x4ECD;&#x662F;&#x7F3A;&#x5931;&#x7684;, &#x5BFC;&#x81F4;<strong>&#x6D41;&#x5F0F;&#x8BFB;&#x53D6;&#x6210;&#x672C;&#x5C45;&#x9AD8;&#x4E0D;&#x4E0B;</strong>. &#x5728;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;, &#x8FD9;&#x4E5F;&#x5236;&#x7EA6;&#x4E86;&#x6D41;&#x5904;&#x7406;&#x7684;&#x7684;&#x5E7F;&#x6CDB;&#x5E94;&#x7528;.</p>
+<p>Fluss&#x521B;&#x65B0;&#x6027;&#x5730;&#x5C06;&#x5217;&#x5B58;&#x5F15;&#x5165;&#x5230;&#x4E86;&#x6D41;&#x5B58;&#x50A8;&#x4E2D;, &#x5728;&#x5E95;&#x5C42;&#x5B58;&#x50A8;&#x4E0A;&#x91C7;&#x7528;&#x4E86;&#x57FA;&#x4E8E;Arrow&#x7684;&#x5217;&#x5B58;&#x683C;&#x5F0F;, &#x5929;&#x7136;&#x5BF9;&#x5217;&#x88C1;&#x526A;&#x548C;&#x6570;&#x636E;&#x8FC7;&#x6EE4;&#x66F4;&#x52A0;&#x53CB;&#x597D;. &#x6B64;&#x5916;, Fluss&#x652F;&#x6301;&#x7684;<a href="https://fluss.apache.org/docs/table-design/data-distribution/partitioning/#multi-field-partitioned-tables" target="_blank" rel="noopener">&#x591A;&#x7EA7;&#x5206;&#x533A;</a>&#x53EF;&#x4EE5;&#x7387;&#x5148;&#x5728;&#x7C97;&#x7C92;&#x5EA6;&#x4E0A;&#x5BF9;&#x4E1A;&#x52A1;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5206;&#x6D41;, &#x5B9E;&#x73B0;&#x6570;&#x636E;&#x8D44;&#x4EA7;&#x5206;&#x79BB;&#x7684;&#x540C;&#x65F6;&#x964D;&#x4F4E;&#x4E0B;&#x6E38;&#x7684;&#x8BFB;&#x538B;&#x529B;. &#x4EE5;&#x5F80;&#x5BF9;&#x4E8E;&#x516C;&#x5171;&#x5C42;&#x7684;&#x5927;&#x89C4;&#x6A21;&#x5B9E;&#x65F6;&#x6570;&#x636E;&#x6E90;, &#x4E3A;&#x4E86;&#x964D;&#x4F4E;&#x4E0B;&#x6E38;&#x8BFB;&#x6210;&#x672C;, &#x901A;&#x5E38;&#x8FD8;&#x9700;&#x8981;&#x81EA;&#x5EFA;&#x5206;&#x6D41;&#x94FE;&#x8DEF;, &#x5728;Fluss&#x4E2D;&#x53EA;&#x9700;&#x5408;&#x7406;&#x5B9A;&#x4E49;&#x8868;&#x7ED3;&#x6784;&#x5373;&#x53EF;.</p>
+<blockquote>
+<p>&#x5173;&#x4E8E;&#x5217;&#x5B58;, &#x4E00;&#x4E2A;&#x5F88;&#x81EA;&#x7136;&#x7684;&#x7591;&#x95EE;&#x662F;: &#x5217;&#x5B58;&#x9700;&#x8981;&#x6512;&#x6279;&#x624D;&#x80FD;&#x53D1;&#x6325;&#x6548;&#x679C;, &#x5B83;&#x771F;&#x7684;&#x9002;&#x5408;&#x6D41;&#x5B58;&#x50A8;&#x5417;? &#x5B9E;&#x9645;&#x4E0A;, Kafka&#x7B49;&#x9762;&#x5411;&#x5927;&#x6570;&#x636E;&#x7684;&#x6D41;&#x5B58;&#x50A8;, &#x5728;&#x8BFB;&#x5199;&#x65F6;&#x4E3A;&#x4E86;&#x63D0;&#x5347;&#x541E;&#x5410;&#x91CF;&#x90FD;&#x662F;&#x6512;&#x6279;&#x7684;, &#x8FD9;&#x4E9B;&#x6279;&#x53EF;&#x4EE5;&#x5F88;&#x81EA;&#x7136;&#x5730;&#x8F6C;&#x6362;&#x4E3A;&#x5217;&#x5B58;&#x683C;&#x5F0F;. <a href="https://www.arroyo.dev/blog/why-arrow-and-datafusion/" target="_blank" rel="noopener">Arroyo</a>&#x7684;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x89E3;&#x91CA;&#x4E86;&#x4E3A;&#x4EC0;&#x4E48;&#x5217;&#x5B58;&#x540C;&#x6837;&#x9002;&#x7528;&#x4E8E;&#x6D41;&#x5B58;&#x50A8;.</p>
+<p align="center"><img src="./top-7-reasons-to-choose-fluss/batch.png" width="90%"></p>
+</blockquote>
+<h1 id="&#x6570;&#x636E;&#x66F4;&#x65B0;&#x4E0E;&#x63A2;&#x67E5;"><a href="#&#x6570;&#x636E;&#x66F4;&#x65B0;&#x4E0E;&#x63A2;&#x67E5;" class="headerlink" title="&#x6570;&#x636E;&#x66F4;&#x65B0;&#x4E0E;&#x63A2;&#x67E5;"></a>&#x6570;&#x636E;&#x66F4;&#x65B0;&#x4E0E;&#x63A2;&#x67E5;</h1><p>&#x4F20;&#x7EDF;&#x7684;&#x6D41;&#x5B58;&#x50A8;&#x5F80;&#x5F80;&#x662F;Append-Only&#x7684;, &#x5BF9;&#x4E8E;&#x5B58;&#x5728;Upsert&#x7684;&#x573A;&#x666F;, &#x5C31;&#x9700;&#x8981;&#x5728;Flink&#x4E2D;&#x6DFB;&#x52A0;&#x989D;&#x5916;&#x7684;&#x6392;&#x5E8F;&#x53BB;&#x91CD;&#x7B97;&#x5B50;, &#x800C;&#x53BB;&#x91CD;&#x7B97;&#x5B50;&#x662F;&#x4E00;&#x4E2A;&#x9700;&#x8981;&#x4FDD;&#x5B58;&#x5927;&#x91CF;&#x7684;&#x72B6;&#x6001;&#x9AD8;&#x6210;&#x672C;&#x64CD;&#x4F5C;. Fluss PrimaryKey&#x8868;&#x7684;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x80FD;&#x529B;&#x53EF;&#x4EE5;&#x53BB;&#x9664;&#x4E0B;&#x6E38;&#x7684;&#x53BB;&#x91CD;&#x7B97;&#x5B50;, &#x5C06;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#x4E0B;&#x63A8;&#x5230;&#x5B58;&#x50A8;&#x5C42;.</p>
+<p>&#x5728;&#x6570;&#x636E;&#x63A2;&#x67E5;&#x65B9;&#x9762;, &#x5BF9;&#x4E8E;PrimaryKey&#x8868;, &#x672C;&#x8EAB;&#x5C31;&#x80FD;&#x652F;&#x6301;&#x70B9;&#x67E5;, &#x9664;&#x4E86;&#x65B9;&#x4FBF;&#x6392;&#x67E5;&#x95EE;&#x9898;&#x65F6;&#x8FDB;&#x884C;&#x63A2;&#x67E5;, &#x4E5F;&#x80FD;&#x4F5C;&#x4E3A;Flink&#x7684;&#x5B9E;&#x65F6;&#x7EF4;&#x8868;. &#x5BF9;&#x4E8E;Log&#x8868;, &#x7531;&#x4E8E;&#x5E95;&#x5C42;&#x91C7;&#x7528;&#x4E86;&#x57FA;&#x4E8E;Arrow&#x7684;&#x5217;&#x5B58;&#x683C;&#x5F0F;, &#x4E5F;&#x80FD;&#x66F4;&#x65B9;&#x4FBF;&#x5730;&#x505A;Data Skip&#x6765;&#x652F;&#x6301;&#x5927;&#x89C4;&#x6A21;&#x7684;&#x67E5;&#x8BE2;. &#x6B64;&#x5916;, &#x5728;Fluss&#x7684;&#x67B6;&#x6784;&#x4E0B;, &#x672A;&#x6765;&#x652F;&#x6301;&#x66F4;&#x591A;&#x7684;&#x7D22;&#x5F15;&#x7ED3;&#x6784;, &#x5982;&#x5012;&#x6392;&#x7D22;&#x5F15;&#x4E5F;&#x662F;&#x53EF;&#x80FD;&#x7684;.</p>
+<h1 id="&#x591A;&#x6A21;&#x6001;&#x6570;&#x636E;&#x652F;&#x6301;"><a href="#&#x591A;&#x6A21;&#x6001;&#x6570;&#x636E;&#x652F;&#x6301;" class="headerlink" title="&#x591A;&#x6A21;&#x6001;&#x6570;&#x636E;&#x652F;&#x6301;"></a>&#x591A;&#x6A21;&#x6001;&#x6570;&#x636E;&#x652F;&#x6301;</h1><p>AI&#x65F6;&#x4EE3;&#x5E26;&#x6765;&#x4E86;&#x66F4;&#x591A;&#x7684;&#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x9700;&#x6C42;, &#x5982;&#x6587;&#x672C;, &#x56FE;&#x50CF;, &#x89C6;&#x9891;, &#x7279;&#x5F81;&#x5411;&#x91CF;&#x53CA;&#x6A21;&#x578B;&#x7B49;. &#x6570;&#x636E;&#x6E56;&#x5DF2;&#x7ECF;&#x5F00;&#x59CB;&#x63A2;&#x7D22;&#x8FD9;&#x7C7B;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;, &#x4F8B;&#x5982;Paimon&#x7684;<a href="https://paimon.apache.org/docs/master/concepts/rest/tables/#object-table" target="_blank" rel="noopener">Object Table</a>, LanceDB&#x91CD;&#x65B0;&#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x79CD;&#x66F4;&#x9002;&#x5408;&#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x7684;&#x6E56;&#x683C;&#x5F0F;<a href="https://github.com/lancedb/lance" target="_blank" rel="noopener">Lance</a>. &#x76EE;&#x524D;&#x8FD9;&#x4E9B;&#x5B58;&#x50A8;&#x90FD;&#x9762;&#x5411;&#x6279;&#x8BFB;&#x6279;&#x5199;, &#x6D41;&#x5F0F;&#x7684;&#x8BFB;&#x5199;&#x4ECD;&#x9700;&#x63A2;&#x7D22;.</p>
+<p>Fluss&#x5DF2;&#x7ECF;&#x521D;&#x6B65;&#x5B9E;&#x73B0;&#x4E86;&#x548C;Lance&#x7684;&#x7ED3;&#x5408;, &#x652F;&#x6301;&#x901A;&#x8FC7;Tiering Service&#x5C06;Fluss&#x4E2D;&#x7684;&#x6570;&#x636E;&#x540C;&#x6B65;&#x5230;Lance&#x4E2D;, &#x5F53;&#x7136;&#x76EE;&#x524D;&#x8FD8;&#x5904;&#x4E8E;&#x65E9;&#x671F;&#x9636;&#x6BB5;, &#x5C1A;&#x4E0D;&#x652F;&#x6301;&#x5927;&#x4E8C;&#x8FDB;&#x5236;&#x5BF9;&#x8C61;. &#x4E0D;&#x8FC7;&#x53EF;&#x4EE5;&#x660E;&#x786E;&#x7684;&#x662F;, Fluss&#x5728;&#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x7684;&#x6D41;&#x5F0F;&#x5165;&#x6E56;&#x65B9;&#x9762;&#x6709;&#x5929;&#x7136;&#x7684;&#x4F18;&#x52BF;, &#x65E0;&#x8BBA;&#x662F;&#x91C7;&#x7528;&#x5DF2;&#x6709;&#x7684;&#x8BFB;&#x5199;&#x8DEF;&#x5F84;, &#x8FD8;&#x662F;&#x91C7;&#x7528;&#x4E0A;&#x6587;&#x6240;&#x8BF4;&#x7684;REST API, &#x90FD;&#x66F4;&#x6613;&#x4E8E;&#x5F62;&#x6210;&#x975E;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x6D41;&#x5F0F;&#x8BFB;&#x5199;&#x7684;&#x6807;&#x51C6;.</p>
+<h1 id="Auto-Rebalance"><a href="#Auto-Rebalance" class="headerlink" title="Auto Rebalance"></a>Auto Rebalance</h1><p>Fluss&#x5F53;&#x524D;&#x91C7;&#x7528;&#x4E86;&#x7C7B;&#x4F3C;Kafka&#x7684;&#x4E09;&#x526F;&#x672C;&#x590D;&#x5236;&#x534F;&#x8BAE;&#x6765;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x7684;&#x9AD8;&#x53EF;&#x7528;. &#x5728;Kafka&#x4E2D;, &#x8FD9;&#x4E00;&#x534F;&#x8BAE;&#x7ED9;&#x5927;&#x89C4;&#x6A21;&#x96C6;&#x7FA4;&#x7684;&#x8FD0;&#x7EF4;&#x7BA1;&#x7406;&#x5E26;&#x6765;&#x4E86;&#x5DE8;&#x5927;&#x6311;&#x6218;. &#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x5730;&#x8FC1;&#x79FB;&#x526F;&#x672C;, &#x5E73;&#x8861;&#x96C6;&#x7FA4;&#x8D1F;&#x8F7D;, &#x4E1A;&#x754C;&#x5728;Kafka&#x5185;&#x6838;&#x4E4B;&#x5916;&#x505A;&#x4E86;&#x5927;&#x91CF;&#x5DE5;&#x4F5C;, &#x5176;&#x4E2D;&#x6709;&#x4EE3;&#x8868;&#x6027;&#x7684;&#x662F;LinkedIn&#x7684;<a href="https://github.com/linkedin/cruise-control" target="_blank" rel="noopener">Cruise Control</a>, &#x5B83;&#x662F;&#x4E00;&#x4E2A;Kafka&#x96C6;&#x7FA4;&#x7684;&#x7BA1;&#x7406;&#x63A7;&#x5236;&#x53F0;, &#x53EF;&#x4EE5;&#x6839;&#x636E;&#x78C1;&#x76D8;, &#x7F51;&#x7EDC;, CPU&#x7B49;&#x76D1;&#x63A7;&#x6307;&#x6807;&#x5BF9;Kafka&#x96C6;&#x7FA4;&#x8FDB;&#x884C;&#x526F;&#x672C;&#x7684;&#x91CD;&#x5E73;&#x8861;.</p>
+<p>Fluss&#x7AD9;&#x5728;&#x5DE8;&#x4EBA;&#x7684;&#x80A9;&#x8180;&#x4E0A;, &#x76F4;&#x63A5;&#x628A;Rebalance&#x7684;&#x80FD;&#x529B;&#x5185;&#x7F6E;&#x5230;&#x4E86;&#x5185;&#x6838;(&#x53C2;&#x8003;<a href="https://cwiki.apache.org/confluence/display/FLUSS/FIP-8%3A+Support+Cluster+Reblance" target="_blank" rel="noopener">FIP-8</a>, <a href="https://cwiki.apache.org/confluence/display/FLUSS/FlP-13%3A+Support+rebalance+for+PrimaryKey+Table" target="_blank" rel="noopener">FIP-13</a>), &#x63D0;&#x4F9B;&#x4E86;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x7684;&#x8FD0;&#x7EF4;&#x7BA1;&#x7406;&#x80FD;&#x529B;.</p>
+<h1 id="&#x603B;&#x7ED3;"><a href="#&#x603B;&#x7ED3;" class="headerlink" title="&#x603B;&#x7ED3;"></a>&#x603B;&#x7ED3;</h1><p>Fluss&#x5173;&#x6CE8;&#x5230;&#x4E86;&#x6D41;&#x5B58;&#x50A8;&#x957F;&#x671F;&#x4EE5;&#x6765;&#x5B58;&#x5728;&#x7684;&#x80FD;&#x529B;&#x7F3A;&#x5931;&#x95EE;&#x9898;, &#x5728;&#x6B64;&#x57FA;&#x7840;&#x4E0A;, &#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x4E86;&#x9762;&#x5411;&#x6D41;&#x8BA1;&#x7B97;&#x4E0E;&#x6570;&#x636E;&#x6E56;&#x6DF1;&#x5EA6;&#x878D;&#x5408;&#x7684;&#x6D41;&#x5B58;&#x50A8;&#x67B6;&#x6784;. &#x5728;<strong>&#x8BA1;&#x7B97;&#x5C42;&#x9762;</strong>, Fluss&#x4E0E;Flink&#x6DF1;&#x5EA6;&#x96C6;&#x6210;, &#x5C06;&#x4F20;&#x7EDF;&#x4F9D;&#x8D56;&#x5176;&#x4ED6;&#x5B58;&#x50A8;&#x5F15;&#x64CE;&#x5B9E;&#x73B0;&#x7684;&#x80FD;&#x529B;&#x8FDB;&#x884C;&#x62BD;&#x8C61;&#x4E0E;&#x6807;&#x51C6;&#x5316;, &#x63D0;&#x4F9B;&#x66F4;&#x52A0;&#x6613;&#x7528;, &#x9AD8;&#x6548;&#x7684;&#x6D41;&#x8BA1;&#x7B97;&#x80FD;&#x529B;; &#x5728;<strong>&#x5B58;&#x50A8;&#x5C42;&#x9762;</strong>, Fluss&#x4E0E;&#x6570;&#x636E;&#x6E56;&#x65E0;&#x7F1D;&#x5BF9;&#x63A5;, &#x6784;&#x5EFA;&#x4E86;<strong>&#x6D41;&#x5B58;&#x50A8;&#x4E0E;&#x6279;&#x5B58;&#x50A8;&#x7684;&#x7EDF;&#x4E00;&#x89C6;&#x56FE;</strong>, &#x5B9E;&#x73B0;&#x4E86;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x7684;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;&#x4E0E;&#x8BBF;&#x95EE;. </p>
+<p>Fluss&#x76EE;&#x524D;&#x6709;&#x6240;&#x6B20;&#x7F3A;&#x7684;&#x662F;&#x4E91;&#x539F;&#x751F;&#x80FD;&#x529B;. &#x5143;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;&#x548C;&#x7BA1;&#x7406;&#x4F9D;&#x8D56;Zookeeper, &#x5728;&#x6269;&#x5C55;&#x6027;&#x65B9;&#x9762;&#x5B58;&#x5728;&#x4E00;&#x5B9A;&#x74F6;&#x9888;. &#x5728;&#x65E5;&#x5FD7;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;&#x4E0A;, &#x76EE;&#x524D;&#x8FD8;&#x662F;&#x7C7B;&#x4F3C;Kafka&#x7684;&#x4E09;&#x526F;&#x672C;&#x6A21;&#x5F0F;, &#x6CA1;&#x6709;&#x5F7B;&#x5E95;&#x91C7;&#x7528;&#x5B58;&#x7B97;&#x5206;&#x79BB;&#x67B6;&#x6784;. &#x4E0D;&#x8FC7;&#x8FD9;&#x4E9B;&#x76EE;&#x524D;&#x90FD;&#x4E0D;&#x4F1A;&#x5236;&#x7EA6;Fluss&#x7684;&#x53D1;&#x5C55;, &#x4E0D;&#x5F71;&#x54CD;Fluss&#x5728;&#x6570;&#x636E;&#x80FD;&#x529B;&#x4E0A;&#x7684;&#x5148;&#x8FDB;&#x6027;. &#x5728;Fluss&#x7684;<a href="https://fluss.apache.org/roadmap/" target="_blank" rel="noopener">Roadmap</a>&#x4E2D;, &#x4E5F;&#x660E;&#x786E;&#x6709;&#x8BA1;&#x5212;&#x79FB;&#x9664;Zookeeper&#x5E76;&#x91C7;&#x7528;&#x5B58;&#x7B97;&#x5206;&#x79BB;&#x67B6;&#x6784;, &#x76F8;&#x4FE1;&#x8FD9;&#x4E00;&#x5929;&#x4E0D;&#x4F1A;&#x592A;&#x8FDC;.</p>
+<p>&#x6700;&#x540E;, &#x6B22;&#x8FCE;&#x4F7F;&#x7528;Fluss&#x5E76;&#x968F;&#x65F6;&#x4EA4;&#x6D41;&#x4F7F;&#x7528;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x95EE;&#x9898;, &#x4E5F;&#x6B22;&#x8FCE;&#x5728;<a href="https://github.com/apache/fluss" target="_blank" rel="noopener">Github</a>&#x4E0A;&#x70B9;&#x4E2A;Star&#x652F;&#x6301;&#x4E00;&#x4E0B;.</p>
+<h1 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h1><p>[1] <a href="https://www.alibabacloud.com/blog/why-fluss-top-4-challenges-of-using-kafka-for-real-time-analytics_601879?spm=a2c65.11461447.0.0.c44c419eggAcCh" target="_blank" rel="noopener">Why Fluss? Top 4 Challenges of Using Kafka for Real-Time Analytics</a> <a href="https://flink-learning.org.cn/article/detail/68f39bcc6623723e17434eae3fedd741" target="_blank" rel="noopener">&#x4E2D;&#x6587;</a><br>[2] <a href="https://flink-learning.org.cn/article/detail/776e869cc97ccd41cabadd4ea840f632?name=author&amp;tab=1578072d4327b508d7e999863c6c95f3&amp;page=xiangguanwenzhang" target="_blank" rel="noopener">&#x6D41;&#x5B58;&#x50A8;Fluss: &#x8FC8;&#x5411;&#x6E56;&#x6D41;&#x4E00;&#x4F53;&#x67B6;&#x6784;</a><br>[3] <a href="https://www.infoq.cn/article/o2f4zfmbzoea4rg4tl46" target="_blank" rel="noopener">Fluss&#x6E56;&#x6D41;&#x4E00;&#x4F53;: Lakehouse&#x67B6;&#x6784;&#x5B9E;&#x65F6;&#x5316;&#x6F14;&#x8FDB;</a><br>[4] <a href="https://www.streamingdata.tech/p/fluss-first-impression?spm=a2csy.flink.0.0.38255badU7gpSA" target="_blank" rel="noopener">Fluss: First Impression</a><br>[5] <a href="https://segmentfault.com/a/1190000047149819?utm_source=sf-similar-article" target="_blank" rel="noopener">&#x5BF9;&#x8BDD;&#x738B;&#x5CF0;: Apache Flink&#x5728;AI&#x65F6;&#x4EE3;&#x7684;&#x201D;&#x5251;&#x950B;&#x201D;&#x6240;&#x5411;</a><br>[6] <a href="https://mp.weixin.qq.com/s/bDb9OUuhgwr_NQvVkv3HEw" target="_blank" rel="noopener">&#x4ECE;&#x5D4C;&#x5165;&#x5F0F;&#x72B6;&#x6001;&#x7BA1;&#x7406;&#x5230;&#x4E91;&#x539F;&#x751F;&#x67B6;&#x6784;: Apache Flink&#x7684;&#x6F14;&#x8FDB;&#x4E0E;&#x4E0B;&#x4E00;&#x4EE3;&#x589E;&#x91CF;&#x8BA1;&#x7B97;&#x8303;&#x5F0F;</a><br>[7] <a href="https://flink-learning.org.cn/article/detail/4d8143a744929f4af97183b6f9cdee08" target="_blank" rel="noopener">&#x57FA;&#x4E8E;Flink&#x8FDB;&#x884C;&#x589E;&#x91CF;&#x6279;&#x8BA1;&#x7B97;&#x7684;&#x63A2;&#x7D22;&#x4E0E;&#x5B9E;&#x8DF5;</a><br>[8] <a href="https://jack-vanlightly.com/blog/2025/9/2/understanding-apache-fluss" target="_blank" rel="noopener">Understanding Apache Fluss</a><br>[9] <a href="https://lancedb.com/blog/fluss-integration/" target="_blank" rel="noopener">Setup Real-Time Multimodal AI Analytics with Apache Fluss (incubating) and Lance</a></p>
+</body></html>
+    
+    </div>
+    
+    <div class="columns is-variable is-1 is-multiline is-mobile">
+    
+        <span class="column is-narrow"><a class="tag is-light article-tag" href="/tags/Apache-Fluss/">#Apache Fluss</a></span>
+    
+    </div>
+    
+    
+    <div class="columns is-mobile is-multiline article-nav">
+        <span class="column is-12-mobile is-half-desktop is-hidden-mobile article-nav-prev">
+            
+        </span>
+        <span class="column is-12-mobile is-half-desktop  article-nav-next">
+            
+            <a href="/flink-mt.html">Flink MT + Paimon - 开源低成本增量计算的曙光</a>
+            
+        </span>
+    </div>
+    
+</article>
+
+
+<div class="sharebox">
+    
+<div class="sharethis-inline-share-buttons"></div>
+<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5e63913dd0c39800126ea9e7&amp;product=inline-share-buttons&amp;cms=sop' async='async'></script>
+
+</div>
+
+
+
+<div class="comments">
+    <p align="center">
+        本博客所有文章除特别声明外, 均采用<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/" target="_blank" rel="noopener">CC BY-NC-SA 3.0 CN</a>许可协议. 转载请注明出处!
+    </p>
+
+    <br><br>
+
+    <p align="center">
+        <img src="/images/WeChat.jpg" width="25%">
+    </p>
+    <p align="center">关注笔者微信公众号获得最新文章推送</p>
+</div>
+
+
+
+<div class="comments">
+    <h3 class="title is-4">Comments</h3>
+    
+<div id="valine-thread"></div>
+<script src="//code.bdstatic.com/npm/leancloud-storage@4.12.2/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/gh/AshinWang/SimpleValine@v0.1/SimpleValine.min.js'></script>
+<script>
+    new Valine({
+        el: '#valine-thread',
+        appId: 'v4Ich4NMxLXYhCkPcb1OmVPR-gzGzoHsz',
+        appKey: 'b5fiVY3XvcAwzJ06YR8rFCAj',
+        notify: true,
+        verify: false,
+        avatar: '',
+        placeholder: 'If you have any questions, please comment here!',
+        meta: ['nick', 'mail'],
+        visitor: true,
+        lang: 'en'
+    })
+</script>
+
+
+</div>
+
+    </div>
+</section>
+    <footer class="footer">
+    <div class="container">
+        <div class="columns content">
+            <div class="column is-narrow has-text-centered">
+                &copy; 2018-2025 Liebing&nbsp;. 
+                <!-- <span id="busuanzi_container_site_uv"><span id="busuanzi_value_site_uv"></span> UV, </span>
+                <span id="busuanzi_container_site_pv"> <span id="busuanzi_value_site_pv"></span> PV</span> -->
+
+                View
+                <span id="busuanzi_value_site_pv" data-num="1000">
+                    <i class="fa fa-spinner fa-spin"></i>
+                </span> times by
+                <span id="busuanzi_value_site_uv">
+                    <i class="fa fa-spinner fa-spin"></i>
+                </span> visitors.
+            </div>
+            <div class="column is-hidden-mobile"></div>
+
+            
+            <div class="column is-narrow">
+                <div class="columns is-mobile is-multiline is-centered">
+                
+                    
+                <a class="column is-narrow has-text-black" title="一行代码, 点滴生活!" href="">
+                    
+                    一行代码, 点滴生活!
+                    
+                </a>
+                
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <!-- 不蒜子计数初始值纠正 -->
+    <script >
+        $(document).ready(function() {
+            var int = setInterval(fixCount, 500);  // 50ms周期检测函数
+            var initPV = 3569;  // 初始化首次数据
+            var initUV = 1215;
+            function fixCount() {                   
+                if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                    $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + initPV); // 加上初始数据 
+                    clearInterval(int); // 停止检测
+                } 
+                if ($("#busuanzi_container_site_uv").css("display") != "none") {
+                    $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + initUV); // 加上初始数据 
+                    clearInterval(int); // 停止检测
+                }  
+            }
+        });
+    </script>
+
+</footer>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+
+<!-- test if the browser is outdated -->
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/" target="_blank" rel="noopener">Update my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // plugin function, place inside DOM ready function
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        })
+    });
+</script>
+
+<script>
+    window.FontAwesomeConfig = {
+        searchPseudoElements: true
+    }
+    moment.locale("en-AU");
+</script>
+
+
+    
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script>
+    MathJax.Hub.Config({
+        "HTML-CSS": {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+</script>
+
+    
+    
+    
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery-all.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.6.5/js/jquery.justifiedGallery.min.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            if (typeof($.fn.lightGallery) === 'function') {
+                $('.article.gallery').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof($.fn.justifiedGallery) === 'function') {
+                $('.justified-gallery').justifiedGallery();
+            }
+        });
+    })(jQuery);
+</script>
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <style>
+        .hljs {
+            position: relative;
+        }
+
+        .hljs .clipboard-btn {
+            float: right;
+            color: #9a9a9a;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hljs .clipboard-btn:hover {
+          color: #8a8a8a;
+        }
+
+        .hljs > .clipboard-btn {
+            display: none;
+            position: absolute;
+            right: 4px;
+            top: 4px;
+        }
+
+        .hljs:hover > .clipboard-btn {
+            display: inline;
+        }
+
+        .hljs > figcaption > .clipboard-btn {
+            margin-right: 4px;
+        }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('figure.hljs').each(function(i, figure) {
+          var codeId = 'code-' + i;
+          var code = figure.querySelector('.code');
+          var copyButton = $('<button>Copy <i class="far fa-clipboard"></i></button>');
+          code.id = codeId;
+          copyButton.addClass('clipboard-btn');
+          copyButton.attr('data-clipboard-target-id', codeId);
+
+          var figcaption = figure.querySelector('figcaption');
+
+          if (figcaption) {
+            figcaption.append(copyButton[0]);
+          } else {
+            figure.prepend(copyButton[0]);
+          }
+        })
+
+        var clipboard = new ClipboardJS('.clipboard-btn', {
+          target: function(trigger) {
+            return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
+          }
+        });
+        clipboard.on('success', function(e) {
+          e.clearSelection();
+        })
+      })
+    </script>
+
+    
+    
+
+    
+
+
+
+<script src="/js/script.js"></script>
+
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-mask"></div>
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+    
+</body>
+</html>
